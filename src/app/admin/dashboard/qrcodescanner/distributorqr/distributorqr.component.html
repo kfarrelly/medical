@@ -1,0 +1,27 @@
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 ">
+			<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+			<div class="form-group">
+				
+				<label style="color: white">Email-Id</label><br>
+
+				<input #br type="email" placeholder="Enter Your Email Id" class="form-control required" style="border: 2px solid green" >
+				<br>
+				
+				<div class="error-message"  *ngIf="registrationForm.get('emailval').touched && registrationForm.get('email').hasError('required')"> 
+					 The email is required.  
+					</div>  
+					<!-- <div class="error-message" *ngIf="registrationForm.get('emailval').touched && registrationForm.get('email').hasError('pattern')">  
+						The email format should be <i>['@domain.com']</i>  </div> -->
+				<button type="submit" (click)="sendRequest(br.value)" (click)="validateform()" class="btn btn-success">Submit</button>
+				
+				 <a [routerLink]="'/login'" style="margin-left:10px"> Click here to Login</a>
+			</div></form>
+		</div>
+	</div>
+</div>
+ </div>
+

@@ -1,0 +1,174 @@
+<app-dashboard></app-dashboard>
+<div class="container">
+  <h4>Pharma Details</h4>
+  <form id="content" [formGroup]="registerForm1" (ngSubmit)="pharma(bId.value,mediStatus.value,mediQuality.value)">
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label>Batch ID</label><span style="color: red">*</span>
+          <input #bId type="text" formControlName="batchid011" class="form-control required"
+            [ngClass]="{ 'is-invalid': submitted1 && f1.batchid011.errors }" maxlength="30">
+          <div *ngIf="submitted1 && f1.batchid011.errors" class="invalid-feedback">
+            <div *ngIf="f1.batchid011.errors.required">Batch ID required </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>Medicine Status</label><span style="color: red">*</span>
+          <input #mediStatus type="text" formControlName="mediStatus011"
+            [ngClass]="{ 'is-invalid': submitted1 && f1.mediStatus011.errors }" class="form-control required"
+            maxlength="30">
+          <div *ngIf="submitted1 && f1.mediStatus011.errors" class="invalid-feedback">
+            <div *ngIf="f1.mediStatus011.errors.required">Medicine Status required </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>Medicine Quality</label><span style="color: red">*</span>
+          <input #mediQuality type="text" formControlName="mediQuality011" class="form-control required"
+            [ngClass]="{ 'is-invalid': submitted1 && f1.mediQuality011.errors }" maxlength="30">
+          <div *ngIf="submitted1 && f1.mediQuality011.errors" class="invalid-feedback">
+            <div *ngIf="f1.mediQuality011.errors.required">Medicine Quality required </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-right">
+      <div class="col">
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="row text-right">
+      <div class="col">
+        <div class="form-group">
+         <a [routerLink]="'/sendpharma'" class="btn btn-success">Send Medicine Info </a>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+
+
+  <div class="container">
+    <h2>List Of Pharma</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-dark table-hover text-center">
+        <thead class="bg-success">
+
+          <tr>
+            <th>Batch ID</th>
+            <th>Medicine Status</th>
+            <th>Medicine Quality</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let distdata  of list">
+            <td>{{distdata.batchid}}</td>
+            <td>{{distdata.medicineStatus}}</td>
+            <td>{{distdata.medicineQuality}}</td>
+            <td><button type="button" class="btn btn-primary" (click)="editPharma(distdata._id)" data-toggle="modal"
+                data-target="#exampleModalCenter">Edit</button></td>
+            <td><button type="submit" (click)="deletePharma(distdata._id)" class="btn btn-danger">Delete</button></td>
+
+          </tr>
+
+        </tbody>
+        <tfoot class="bg-success">
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>
+            <th></th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Update Pharma -->
+<div class="container">
+
+  <!-- The Modal -->
+  <div class="modal fade" id="exampleModalCenter">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form [formGroup]="registerForm"
+            (ngSubmit)="onSubmit(batchid.value, medicineStatus.value,medicineQuality.value,editlist._id)">
+          
+            <div class="form-group">
+              <label>Batch ID</label>
+              <input type="text" formControlName="batchid0" #batchid class="form-control required"
+                [(ngModel)]="editlist.batchid" [ngClass]="{ 'is-invalid': submitted && f.batchid0.errors }">
+              <div *ngIf="submitted && f.batchid0.errors" class="invalid-feedback">
+                <div *ngIf="f.batchid0.errors.required">Batch ID required</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Medicine Status</label>
+              <input #medicineStatus type="text" formControlName="medicineStatus0" class="form-control required"
+                [(ngModel)]="editlist.medicineStatus"
+                [ngClass]="{ 'is-invalid': submitted && f.medicineStatus0.errors }">
+              <div *ngIf="submitted && f.medicineStatus0.errors" class="invalid-feedback">
+                <div *ngIf="f.medicineStatus0.errors.required">Medicine Status required </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Medicine Quality</label>
+              <input #medicineQuality type="text" formControlName="medicineQuality0" class="form-control required"
+                [(ngModel)]="editlist.medicineQuality" maxlength="30"
+                [ngClass]="{ 'is-invalid': submitted && f.medicineQuality0.errors }">
+              <div *ngIf="submitted && f.medicineQuality0.errors" class="invalid-feedback">
+                <div *ngIf="f.medicineQuality0.errors.required">Medicine Quality required </div>
+              </div>
+
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <div class="form-group">
+                <button type="button" #completeModal class="btn btn-danger" (click)="pharmaList();" data-dismiss="modal">Close</button>
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

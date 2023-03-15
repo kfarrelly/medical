@@ -1,0 +1,49 @@
+<app-dashboard></app-dashboard>
+<div class="container"> 
+    <h4>Fill User Details</h4>
+    <form>
+        <div class="row">
+            <div class="col">
+               <div class="form-group">
+                  <label>EthAddress</label>
+                  <input type="text" class="form-control required" maxlength="30">
+                </div>
+             </div>
+          </div>
+
+      <div class="row">
+        <div class="col"><div class="form-group">
+            <label>Name</label>
+            <input #name type="text" class="form-control required" maxlength="30">
+          </div>
+        </div>
+
+       <div class="col"><div class="form-group">
+            <label>Location</label>
+            <input #location type="text" class="form-control required" maxlength="30">
+          </div>
+        </div>
+      </div>    
+           
+      <div class="row">
+         <div class="col-md-4">
+             <label>Role</label>
+             <div class="form-group">                        
+                <select #role  class="form-control">
+                    <option value="manufacture">Manufacture</option>
+                    <option value="wholesaler">Wholesaler</option>
+                    <option value="distrubuter">Distrubuter</option>
+                    <option value="pharma">Pharma</option>                          
+                  </select>                        
+            </div>                
+          </div>
+       </div>  
+        <div class="row text-right">
+          <div class="col"><div class="form-group">
+              <button class="btn btn-primary" (click)="createuser(name.value,location.value,role.value)">Create User</button>
+          </div>
+        </div>
+      </div>
+
+ </form>
+</div>

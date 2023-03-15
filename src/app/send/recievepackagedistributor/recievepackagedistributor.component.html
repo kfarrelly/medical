@@ -1,0 +1,130 @@
+<app-dashboard></app-dashboard>
+<div class="container">
+	<br>
+	<br>
+
+	<form>
+	
+        <div class="row"> 
+          <div class="col"><div class="form-group">
+            <label>Packing Barcode</label>
+			<input type="file" style="margin-left:20px;" accept="image/*" (change)="onFileChange($event)">
+            <input #br type="text" value="{{barcodevalue}}" class="form-control required" >
+          </div>
+        </div>
+        
+            
+          </div>
+            <div class="row text-right">
+             		<div class="col">
+             			<div class="form-group">
+                  			<button type="button" (click)="getByPackageId(br.value,4)" class="btn btn-primary">Accept</button>
+								&nbsp; &nbsp; &nbsp; &nbsp;
+                        <button type="button" (click)="getByPackageId(br.value,5)" class="btn btn-secondary">Reject</button>
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                        <button type="reset" (click)="getdetails(br.value,5)" class="btn btn-primary">Get Details</button>
+                		</div>
+                </div>
+             </div>
+	</form>
+
+
+  <div *ngIf="displayTable" class="table-responsive">
+    <br>
+    <table class="table table-striped table-dark table-hover text-center">
+      
+        <thead class="bg-success">
+            <tr>            
+              <th>Serial Number</th>
+              <th>Level</th>
+              <th>Location</th>   
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a [routerLink]="['/package/details',mlist[0].serial]">{{mlist[0].serial}}</a></td>
+            <td>{{mlist[0].level}}</td>
+            <td>{{mlist[0].location}}</td>      
+          </tr>
+         
+        </tbody>
+        <tfoot class="bg-success"><tr><th></th><th></th><th></th><th></th><th></th></tr></tfoot>
+      </table>
+    </div>
+
+    <div  class="table-responsive">
+      <br>
+      <table class="table table-striped table-dark table-hover text-center">
+        
+          <thead class="bg-success">
+              <tr>            
+                  <th>Serial Number</th>
+                   <th>Level</th>
+					<th>Location</th>  
+                  <th></th>             
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let list of TMlist">
+              <td><a [routerLink]="['/package/details',list.serial]">{{list.serial}}</a></td>
+              <td>{{list.level}}</td>
+              <td>{{list.location}}</td>
+              <td><button type="button"   (click)="serialId(list.serial,list.level)"  class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Send to Pharma</button> &nbsp; &nbsp; &nbsp;  <button type="button"   (click)="openpackage(list.PackageId,list.level)"  class="btn btn-primary" >Open Package</button></td>
+              </tr>
+           
+          </tbody>
+          <tfoot class="bg-success"><tr><th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <!-- <th></th>
+            <th></th> -->
+          </tr></tfoot>
+        </table>
+      </div>
+
+</div>
+
+
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Medicine Transportation</h5>
+          
+        </div>
+        <div class="modal-body">
+      
+      <div class="row">
+            <div class="col"><div class="form-group">
+                <label>Serial</label>
+                <input #serial   type="text" [(ngModel)]="serialvalue" class="form-control required">
+              </div></div>           
+          </div>   
+           <div class="row">          
+                <div class="col"><div class="form-group">
+                  <label>DistributerId</label>
+           <select [(ngModel)]="wId1" class="form-control" >
+                <option    *ngFor="let wid of dlist" [value]="wid.publicKey">{{wid.firstName}}</option>
+                            </select>   
+                </div></div>
+            </div>       
+    <div class="row">
+            <div class="col"><div class="form-group">
+                <label>TransporterId</label>
+          <select [(ngModel)]="tId1" class="form-control">
+                <option  *ngFor="let wid of tlist" [value]="wid.userId">{{wid.firstName}}</option>
+                            </select> 
+              </div></div>           
+          </div> 		
+  
+            
+        </div>
+        <div class="modal-footer"> 
+        <button type="button" class="btn btn-danger" #completeModal  data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="mTransection(serial.value,wId1,tId1)">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>

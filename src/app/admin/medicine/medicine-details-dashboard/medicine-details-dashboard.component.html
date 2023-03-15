@@ -1,0 +1,132 @@
+<app-dashboard></app-dashboard>
+<br>
+<div class="container">
+<div class="row" *ngFor="let distdata  of list"> 
+  
+  <div class="col">
+    <div class="card" style="padding:18px;">
+      <p style="text-align:center"><b>Medicine Id: </b> {{list[0].MedicineId}}</p>
+      <div class="row">
+	  <div class="col"  style="margin-left:8%;"><b>Serial No: </b> {{distdata.serial}}</div>
+	  <div class="col"><b>Location: </b> {{distdata.location}}</div>
+	  <div class="col"><b>Temperature: </b> {{distdata.barcode}}<sup>o</sup>C</div>
+    </div><br>
+    <div class="row">
+        <div class="col col-4"></div>
+        <div class="col col-5"><b>Medicine Description</b></div>
+        <div class="col col-3"></div>
+      </div><br>
+	  <div class="row">
+    <div class="col"><b>Medicine Name: </b> {{distdata.medicine}}</div>
+	  <div class="col"><b>Weight(Kg): </b> {{distdata.weight}}</div>
+	  <div class="col"><b>Manufacture: </b> {{distdata.Mdate}}</div>
+	  <div class="col"><b>Expiry: </b> {{distdata.Edate}}</div>
+    </div><br>
+
+    <div class="row">
+      <div class="col"  style="margin-left:25%; text-align: left">
+        <b style="color:blue">Medicine Owner </b>
+        <span id="styleStatus">{{distdata.status}}</span>
+      </div>
+    </div> 
+	  <div class="row">
+		<div class="col" style="text-align:center;">
+    <!-- <button class="form-control btn-defult" *ngIf="myrole>1" (click)="editMedicine(distdata._id)" data-toggle="modal" data-target="#exampleModalCenter"> <b>Update Status</b> </button> -->
+    
+    
+		</div>
+		</div>
+    </div>
+  </div>  
+  </div>
+  
+  <!-- part 2 for medicine status -->
+  <!-- <div class="row" *ngFor="let distdata  of list2"> 
+  <div class="col">
+    <div class="card" style="padding:18px;">
+     <p style="text-align:center"><b>Medicne Id:</b> {{distdata.MedicineId}}</p> 
+    <div class="row">
+      <div class="col" style="margin-left:8%; text-align: left">
+        <b>Date:</b>{{distdata.time | date:'dd/MM/yyyy'}}
+      </div>
+      <div class="col"></div>
+      <div class="col" >
+        <b>Time:</b>{{distdata.time | date:'hh:mm:ss'}}
+      </div>
+    </div>
+      <div class="row">
+	  <div class="col"  style="margin-left:8%;"><b>Serial No: </b> {{distdata.serial}} </div>
+	  <div class="col"><b>Location: </b> {{distdata.location}}</div>
+	  <div class="col"><b>Temperature: </b> {{distdata.barcode}}<sup>o</sup>C</div>
+	  </div>
+	  <div class="row">
+	  <div class="col"   style="margin-left:8%;"><b>Weight: </b> {{distdata.weight}}</div>
+	  <div class="col"><b>Manufacture: </b> {{distdata.Mdate}}</div>
+	  <div class="col"><b>Expiry: </b> {{distdata.Edate}}</div>
+    </div>
+    <div class="row">
+      <div class="col" style="margin-left:8%; text-align: left;">
+        <b>Medicine Status: </b>
+        <span id='styleStatus'>{{distdata.status}}</span>
+      </div>
+    </div>	   
+    </div>
+  </div>  
+  </div>
+  
+  
+  
+  
+  
+  
+  </div>
+   -->
+  
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Status Update</h5>
+        
+      </div>
+      <form [formGroup]="registerForm1" (ngSubmit)="medicineUpdate(editlist.serial,editlist.medicine,temperature.value,location.value,editlist.weight,editlist.Mdate,editlist.Edate,editlist.MedicineId,editlist.role,now)">
+      <div class="modal-body">
+	  
+	        <div class="row">
+          <div class="col"><div class="form-group">
+              <label style="margin-left: 35px">Temperature</label>
+              <input #temperature  formControlName="temperature011" type="number" class="form-control required" [ngClass]="{ 'is-invalid': submitted && f1.temperature011.errors }" placeholder=" Enter Current Temperature" maxlength="5">
+              <div *ngIf="submitted && f1.temperature011.errors" class="invalid-feedback">
+                <div *ngIf="f1.temperature011.errors.required" style="margin-left: 35px">Temperature required </div>
+              </div>
+            </div></div>           
+            </div>   
+         <div class="row">          
+              <div class="col"><div class="form-group">
+                <label style="margin-left: 35px">Location</label>
+                <input  type="text" #location formControlName="location011" class="form-control required" [ngClass]="{ 'is-invalid': submitted && f1.location011.errors }" placeholder="Enter Current Location" maxlength="30">
+                <div *ngIf="submitted && f1.location011.errors" class="invalid-feedback">
+                    <div *ngIf="f1.location011.errors.required" style="margin-left: 35px">Location required </div>
+                  </div>
+                
+              </div></div>
+          </div>       	
+
+          
+       </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-danger" #completeModal  data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+         </div>
+        </form>
+      
+    </div>
+  </div>
+</div>
+
+
+
+  
+  
+  

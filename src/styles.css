@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';  
+/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
+
+.white-box {
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 15px;
+}
+
+.bg-title {
+    border-bottom: 1px solid #e4e7ea;
+    overflow: hidden;
+    padding: 10px 10px 5px;
+    margin-bottom: 25px;
+    margin-left: -25.5px;
+    margin-right: -25.5px;
+}
+body{
+    /*background-color:rgb(235,235,235);*/
+	background-color:#87ceeb;
+}

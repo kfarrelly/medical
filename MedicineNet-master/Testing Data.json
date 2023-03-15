@@ -1,0 +1,44 @@
+{
+	"Roles": {
+		"admin": 1,
+		"manufacturer": 2,
+		"wholesaler": 3,
+		"distributer": 4,
+		"pharma": 5,
+		"batches": 6,
+		"transporter": 7
+	},
+	"Status": {
+		"awarded": 1,
+		"pickedup": 2,
+		"intransact": 3,
+		"delivered": 4,
+		"return": 5
+	},
+	"Keys": {
+		"admin": [{
+			"public": "03786d1c2d9a0e7d1443fa0b38d25e37ceddd81a45185d7559c8a5b48d63eace23",
+			"private": "163003a9ddb92f65d5205ce1380a407315dfca7424327fa13860812814b6e74d"
+		}],
+		"manufacturer": [{
+			"public": "025d3a0ca32ec89b887686a7ab26bf1cb41b5b5a3994c9b9fc4957e73058c3f5d4",
+			"private": "dd406799386462d157f31aead895e913bb90efff50c1419e20144924c67b94aa"
+		}],
+		"transporter": [{
+			"public": "02a77fbf1d24069c472217282c35935935167ab8925792c4ec461765a96a7b353b",
+			"private": "fbe76211c229c991a77db0e0272bc43e1f7423acc0b1d85840b049d86049b8f3"
+		}],
+		"wholesaler": [{
+			"public": "022e236bc7bef18ec91bdc14ba4f58062d0675323b9534480b21f1429c4df875d7",
+			"private": "cae20cd2fff58cb74a428380e4ae0345b7c0d0c4d0e6d5ee33003270203851a3"
+		}],
+		"distributer": [{
+			"public": "02ea89b11ad1cfc2e730a6dfd9d6ddd0c8410e3a332188235bbe4a9a41a0c14f44",
+			"private": "da4f83a705d3544259d7f6eb207aebfa5b991c61f5dfa013354c0a80c3f8bcff"
+		}],
+		"pharma": [{
+			"public": "0369118c060b845f09e4e7428ad4ee575c6a6bf5130a1c8a2e43a8194ca3651e1a",
+			"private": "d46a7dd16e04b86d302997d81da7718c57c9d04e348cb7488e03a2d4fee12f65"
+		}]
+	}
+}

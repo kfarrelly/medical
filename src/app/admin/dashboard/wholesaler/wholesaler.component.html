@@ -1,0 +1,240 @@
+<app-dashboard></app-dashboard>
+
+<!-- <div class="container">
+  <h4>Wholesaler Details</h4>
+  <form id="content" [formGroup]="registerForm1" (ngSubmit)="wholesaler(bId.value,shipper.value,reciver.value)">
+    <div class="row">
+
+      <div class="col">
+        <div class="form-group">
+          <label>Batch ID</label><span style="color: red">*</span>
+          <input #bId type="text" class="form-control required" formControlName="bId011"
+            [ngClass]="{ 'is-invalid': submitted1 && f1.bId011.errors }" maxlength="30">
+          <div *ngIf="submitted1 && f1.bId011.errors" class="invalid-feedback">
+            <div *ngIf="f1.bId011.errors.required">Batch ID required</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>Shipper</label><span style="color: red">*</span>
+          <input #shipper type="text" class="form-control required" formControlName="shipper011"
+            [ngClass]="{ 'is-invalid': submitted1 && f1.shipper011.errors }" maxlength="30">
+          <div *ngIf="submitted1 && f1.shipper011.errors" class="invalid-feedback">
+            <div *ngIf="f1.shipper011.errors.required">Shipper required</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>Receiver</label><span style="color: red">*</span>
+          <input #reciver type="text" class="form-control required" formControlName="reciver011"
+            [ngClass]="{ 'is-invalid': submitted1 && f1.reciver011.errors }" maxlength="30">
+          <div *ngIf="submitted1 && f1.reciver011.errors" class="invalid-feedback">
+            <div *ngIf="f1.reciver011.errors.required">Receiver required</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row text-right">
+      <div class="col">
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Create Records</button>
+        </div>
+      </div>
+    </div>
+    <div class="row text-right">
+      <div class="col">
+        <div class="form-group">
+          <a [routerLink]="'/sendwholesaler'" class="btn btn-success"> Send Medicine</a>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+  <div class="container-fulid">
+    <h2>List Of Wholesaler</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-dark table-hover text-center">
+
+        <thead class="bg-success">
+          <tr>
+            <th>Batch ID</th>
+            <th>Shipper</th>
+            <th>Receiver</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+
+        </thead>
+
+
+        <tbody>
+          <tr *ngFor="let distdata  of list">
+            <td>{{distdata.batchid}}</td>
+            <td>{{distdata.shipper}}</td>
+            <td>{{distdata.reciver}}</td>
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" (click)="editWholesaler(distdata._id)"
+                data-target="#exampleModalCenter" data-dismiss="exampleModalCenter">Edit</button></td>
+            <td><button type="button" (click)="deleteWholesaler(distdata._id)" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot class="bg-success">
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div> -->
+
+
+
+  <!-- Modal 
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Edit Data</h5>
+        
+      </div>
+      <div class="modal-body">
+        <form>
+           <div class="row">
+           <div class="col"><div class="form-group">
+                <label>Batch ID</label>
+                <input type="text"  #bId1 class="form-control required" [(ngModel)]="editlist.batchid" name="batchid" maxlength="30"  >
+              </div></div>
+          </div>
+
+      <div class="row">
+          <div class="col"><div class="form-group">
+              <label>Shipper</label>
+              <input  type="text" #shipper1 class="form-control required" [(ngModel)]="editlist.shipper" name="reciver" maxlength="30"  >
+            </div></div>           
+        </div>     
+
+        <div class="row">
+            <div class="col"><div class="form-group">
+                <label>Receiver</label>
+                <input  type="text" #reciver1 class="form-control " [required]="true" [(ngModel)]="editlist.reciver" name="shipper" maxlength="30"  >
+              </div></div>            
+          </div>    
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="wholesalerList()" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="updateWholesaler(bId1.value, shipper1.value,reciver1.value,editlist._id)">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>  
+
+</div>-->
+
+
+  <!-- private key Modal 
+<div *ngIf="popuptask" _ngcontent-c1 aria-labelledby="exampleModalLabel" class="modal fade {{button1}}" id="basicExampleModal" role="dialog" tabindex="-1" style="display: block; background-color: rgba(17, 16, 16, 0.82);" aria-modal="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="    border-bottom: 1px solid #ffffff;">
+          <h5 class="modal-title" id="exampleModalLabel">Private Key</h5>
+        </div>
+        <div class="modal-body">
+          <h6 style="color:red; float: right;">Chance {{count+1}}</h6>
+          <span style="color:green; text-align: right;">You have only 3 chance to enter your valid Key</span>
+         <input type="text" #privateK class="form-control required" placeholder="Enter your private Key">
+        </div>
+        <div class="modal-footer" style="border-top: 1px solid #ffffff;">       
+          <button type="button" class="btn btn-primary" (click)="postPrivateKey(privateK.value)">Save</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+<!-- 
+
+  <div class="container">
+
+    
+    <div class="modal fade" id="exampleModalCenter">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+
+          
+          <div class="modal-body">
+            <form [formGroup]="registerForm"
+              (ngSubmit)="onSubmit(bId1.value,shipper1.value, reciver1.value,editlist._id)">
+
+
+              
+
+
+              <div class="form-group">
+                <label>Batch ID</label>
+                <input type="text" formControlName="batchid0" #bId1 class="form-control required"
+                  [(ngModel)]="editlist.batchid" [ngClass]="{ 'is-invalid': submitted && f.batchid0.errors }">
+                <div *ngIf="submitted && f.batchid0.errors" class="invalid-feedback">
+                  <div *ngIf="f.batchid0.errors.required">Batch ID required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Shipper</label>
+                <input #shipper1 type="text" formControlName="medicineStatus0" class="form-control required"
+                  [(ngModel)]="editlist.shipper" [ngClass]="{ 'is-invalid': submitted && f.medicineStatus0.errors }">
+                <div *ngIf="submitted && f.medicineStatus0.errors" class="invalid-feedback">
+                  <div *ngIf="f.medicineStatus0.errors.required">Shipper required </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Receiver</label>
+                <input #reciver1 type="text" formControlName="medicineQuality0" class="form-control required"
+                  [(ngModel)]="editlist.reciver" maxlength="30"
+                  [ngClass]="{ 'is-invalid': submitted && f.medicineQuality0.errors }">
+                <div *ngIf="submitted && f.medicineQuality0.errors" class="invalid-feedback">
+                  <div *ngIf="f.medicineQuality0.errors.required">Receiver required </div>
+                </div>
+
+
+              </div>
+
+              
+              <div class="modal-footer">
+                <div class="form-group">
+                  <button type="button" class="btn btn-danger" #completeModal (click)="wholesalerList()"
+                    data-dismiss="modal">Close</button>
+                </div>
+
+                <div class="form-group">
+                  <button class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->

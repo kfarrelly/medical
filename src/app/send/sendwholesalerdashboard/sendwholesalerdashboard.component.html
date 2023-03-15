@@ -1,0 +1,201 @@
+<app-dashboard></app-dashboard>
+
+	<br>
+	<br>
+	<div class="container">
+	<div class="row">
+<!-- 
+	<form>
+	
+        <div class="row"> 
+          <div class="col"><div class="form-group">
+            <label>Packing Barcode</label>
+			<input type="file" style="margin-left:20px;" accept="image/*" (change)="onFileChange($event)">
+            <input #br type="text" value="{{barcodevalue}}" class="form-control required" >
+          </div>
+        </div>
+        
+            
+          </div>
+            <div class="row text-right">
+             		<div class="col">
+             			<div class="form-group">
+                  			<button type="reset" (click)="getByMedicineId(br.value)" class="btn btn-primary">Submit</button>
+                		</div>
+                </div>
+             </div>
+	</form> -->
+
+
+  <div *ngIf="displayTable"  class="col-xs-9 col-md-6 col-sm-6">
+    <br>
+    <table class="table table-striped table-dark table-hover text-center">
+      
+        <thead class="bg-success">
+            <tr>            
+              <th> Serial Number</th>
+              <th>Medicine</th>
+              <th>Manufacture Date</th>
+              <th>Location</th>
+              <th>Weight(Kg)</th>   
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a [routerLink]="['/medicine/details',mlist[0].serial]">{{mlist[0].serial}}</a></td>
+            <td>{{mlist[0].medicine}}</td>
+            <td>{{mlist[0].Mdate}}</td>
+            <td>{{mlist[0].location}}</td>
+            <td>{{mlist[0].weight}}</td>
+
+          </tr>
+         
+        </tbody>
+        <tfoot class="bg-success"><tr><th></th><th></th><th></th><th></th><th></th></tr></tfoot>
+      </table>
+    </div>
+
+	
+	<div class="col-xs-9 col-md-6 col-sm-6">
+
+      <table class="table table-striped table-dark table-hover text-center">
+        
+          <thead class="pd">
+              <tr>            
+                  <th> Serial Number</th>
+                  <!-- <th>Medicine</th>
+                  <th>Manufacture Date</th>
+                  <th>Location</th>
+                  <th>Weight</th>   
+                  <th></th>              -->
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let list of TMlist">
+              <td><a [routerLink]="['/medicinedetailsdashboard',list.serial]" style="color:white">{{list.serial}}</a></td>
+              <!-- <td>{{list.medicine}}</td>
+              <td>{{list.Mdate}}</td>
+              <td>{{list.location}}</td>
+              <td>{{list.weight}}</td>           
+              <td><button type="button"   (click)="serialId(list.serial)"  class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Send to Distributer</button></td> -->
+              </tr>
+           
+          </tbody>
+          <tfoot class="pd"><tr><th></tr></tfoot>
+        </table>
+      </div>
+	
+	 <div class="col-xs-9 col-md-6 col-sm-6">
+    <table class="table table-striped table-dark table-hover text-center">
+
+      <thead class="pd">
+        <tr>
+          <th>Serial</th>
+		  <th>Sent to</th>
+		  <th>Transporter</th>
+		  <th>Date</th>
+          <!-- <th>Medicine code</th>
+          <th>Manufactured Date</th>
+          <th>Location</th>
+          <th>Weight(Kg)</th> -->
+          <!-- <th></th>
+          <th></th> -->
+        </tr>
+      </thead>
+      <tbody>
+          <ng-container *ngFor="let tr of trans; let i = index" >
+        <tr *ngIf="tr.serial">
+          <td><a [routerLink]="['/medicinedetailsdashboard',tr.serial]" style="color:white"> {{tr.serial}} </a></td>
+		  <td><p *ngFor="let u of dlist;"><span *ngIf="u.userId==tr.wholesalerId || u.publicKey==tr.wholesalerId ">{{u.firstName}} {{u.lastName}}</span></p></td>
+		   <td><p *ngFor="let t of tlist;"><span *ngIf="t.userId==tr.transporterId  || t.publicKey==tr.wholesalerId 	">{{t.firstName}} {{t.lastName}}</span></p></td>
+		   <td><span *ngIf="tr.edate">{{tr.edate | date: 'dd/MM/yyyy h:mm:ss a'}}</span></td>
+		   
+        </tr>
+          </ng-container>
+      </tbody>
+      
+    </table>
+	 </div>
+	 
+	 
+	 	 <div class="col-xs-9 col-md-6 col-sm-6">
+    <table class="table table-striped table-dark table-hover text-center">
+
+      <thead class="pd">
+        <tr>
+          <th>Serial</th>
+		  <th>Sent By</th>
+		  <th>Transporter</th>
+		  <th>Date</th>
+          <!-- <th>Medicine code</th>
+          <th>Manufactured Date</th>
+          <th>Location</th>
+          <th>Weight(Kg)</th> -->
+          <!-- <th></th>
+          <th></th> -->
+        </tr>
+      </thead>
+      <tbody>
+          <ng-container *ngFor="let tr of recievedtrans; let i = index" >
+        <tr *ngIf="tr.serial">
+          <td><a [routerLink]="['/medicinedetailsdashboard',tr.serial]" style="color:white"> {{tr.serial}} </a></td>
+		  <td><p *ngFor="let u of malist;"><span *ngIf="u.userId==tr.senderId || u.publicKey==tr.wholesalerId ">{{u.firstName}} {{u.lastName}}</span></p></td>
+		   <td><p *ngFor="let t of tlist;"><span *ngIf="t.userId==tr.transporterId  || t.publicKey==tr.wholesalerId 	">{{t.firstName}} {{t.lastName}}</span></p></td>
+		   <td><span *ngIf="tr.edate">{{tr.edate | date: 'dd/MM/yyyy h:mm:ss a'}}</span></td>
+		   
+        </tr>
+          </ng-container>
+      </tbody>
+      
+    </table>
+	 </div>
+	 
+
+     
+    
+
+</div>
+</div>
+
+   <!-- Modal -->
+   <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Medicine Transportation</h5>
+          
+        </div>
+        <div class="modal-body">
+      
+      <div class="row">
+            <div class="col"><div class="form-group">
+                <label>Serial</label>
+                <input #serial   type="text" [(ngModel)]="serialvalue" class="form-control required">
+              </div></div>           
+          </div>   
+           <div class="row">          
+                <div class="col"><div class="form-group">
+                  <label>DistributerId</label>
+           <select [(ngModel)]="wId1" class="form-control" >
+                <option    *ngFor="let wid of dlist" [value]="wid.publicKey">{{wid.firstName}}</option>
+                            </select>   
+                </div></div>
+            </div>       
+    <div class="row">
+            <div class="col"><div class="form-group">
+                <label>TransporterId</label>
+          <select [(ngModel)]="tId1" class="form-control">
+                <option  *ngFor="let wid of tlist" [value]="wid.userId">{{wid.firstName}}</option>
+                            </select> 
+              </div></div>           
+          </div> 		
+  
+            
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-danger" #completeModal  data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="mTransection(serial.value,wId1,tId1)">Send</button>
+        </div>
+      </div>
+    </div>
+  </div> -->

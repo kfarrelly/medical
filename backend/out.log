@@ -1,0 +1,56 @@
+server is running on port 10000
+Pre { _id: 5cbeaecb0c2f6b48754528b8,
+  firstName: 'dilbag',
+  lastName: 'singh',
+  role: 'Manufacture',
+  mobileNo: 82457089,
+  email: 'dilbag@gmail.com',
+  password:
+   '$2a$07$EeYs.TvBEQOkP24gRNFU1OoqyYpbIflgOpCJvdlQPEKxt.RS7qXne',
+  __v: 0,
+  token:
+   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2JlYWVjYjBjMmY2YjQ4NzU0NTI4YjgiLCJpYXQiOjE1NTY2MzQxNzh9.3XLC_fA3hfZ4a3h0jrHsN3qGWg_dZ6zriFWgN9v7uUc' }
+Pre { _id: 5cbeaecb0c2f6b48754528b8,
+  firstName: 'dilbag',
+  lastName: 'singh',
+  role: 'Manufacture',
+  mobileNo: 82457089,
+  email: 'dilbag@gmail.com',
+  password:
+   '$2a$07$EeYs.TvBEQOkP24gRNFU1OoqyYpbIflgOpCJvdlQPEKxt.RS7qXne',
+  __v: 0,
+  token:
+   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2JlYWVjYjBjMmY2YjQ4NzU0NTI4YjgiLCJpYXQiOjE1NTY2MzQyMDR9.4M_hj70_6N79QmA1TAE4xUVnoPkznBLB4IDEJgaA1P8' }
+Pre { _id: 5cc800fd9ffed66eb366581c,
+  firstName: 'myamdin',
+  lastName: 'user',
+  role: 'Admin',
+  mobileNo: 7236478234,
+  email: 'myadmin@gmail.com',
+  password:
+   '$2a$07$qXC1IKJZRYjkNve7ppFVh.9nhUqndI2C0MXNYOxQOTZysoXubBLBm',
+  __v: 0,
+  token:
+   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2M4MDBmZDlmZmVkNjZlYjM2NjU4MWMiLCJpYXQiOjE1NTY2MzQyNjd9.WdE3Or8Bx6Ws8TYxzgCClN2tDrW8YZIPAZC_UMgBMwE' }
+Pre { _id: 5cc800fd9ffed66eb366581c,
+  firstName: 'myamdin',
+  lastName: 'user',
+  role: 'Admin',
+  mobileNo: 7236478234,
+  email: 'myadmin@gmail.com',
+  password:
+   '$2a$07$qXC1IKJZRYjkNve7ppFVh.9nhUqndI2C0MXNYOxQOTZysoXubBLBm',
+  __v: 0,
+  token:
+   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2M4MDBmZDlmZmVkNjZlYjM2NjU4MWMiLCJpYXQiOjE1NTY2NTA4OTh9.Ba-uY8O2JD9gDnRvaFyD07qaJNRK_ZKCv8hpcxemOf0' }
+Pre { _id: 5cbeaecb0c2f6b48754528b8,
+  firstName: 'dilbag',
+  lastName: 'singh',
+  role: 'Manufacture',
+  mobileNo: 82457089,
+  email: 'dilbag@gmail.com',
+  password:
+   '$2a$07$EeYs.TvBEQOkP24gRNFU1OoqyYpbIflgOpCJvdlQPEKxt.RS7qXne',
+  __v: 0,
+  token:
+   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2JlYWVjYjBjMmY2YjQ4NzU0NTI4YjgiLCJpYXQiOjE1NTY2NTMyMTR9.Jyn5Agjn-3c44Q3gf2w70pqqrcjk50ERwI_UPSEIjOc' }

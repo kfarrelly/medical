@@ -1,0 +1,182 @@
+<app-dashboard></app-dashboard>
+<div class="container">
+  <h4 class="text-center">Welcome {{profile.firstName|uppercase}}</h4>
+  <form>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>Public Key</label>
+          <p> {{profile.publicKey}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>Username</label>
+          <p>{{profile.firstName}} {{profile.lastName}}</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>Password</label>
+          <p id="privatekey"> {{profile.password}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>Email</label>
+          <p>{{profile.email}}</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>Role</label>
+          <span *ngIf="profile.role == 1">
+          <p>Admin</p></span>
+          <span *ngIf="profile.role == 2">
+            <p> Manufacturer</p></span>
+            <span *ngIf="profile.role == 3">
+              <p> Wholesaler</p></span>
+              <span *ngIf="profile.role == 4">
+                <p>Distributor</p></span>
+                <span *ngIf="profile.role == 5">
+                  <p>Pharma</p></span>
+                  <span *ngIf="profile.role == 6">
+                    <p> Transporter</p></span>
+        </div>
+      </div>
+    </div>
+	
+	
+		<div class="row">
+		<div class="col">
+		<h4 class="text-center">Settings</h4>
+		<br/>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col">
+		&nbsp;
+		</div>
+		</div>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" data-toggle="modal"
+              data-target="#exampleModalCenter">Edit Profile</button>
+        </div>
+      </div>
+	  <div class="col">
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" data-toggle="modal"
+              data-target="#changepassword">Change Password</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- Update Pharma -->
+<div class="container">
+
+    <!-- The Modal -->
+    <div class="modal fade" id="exampleModalCenter">
+      <div class="modal-dialog">
+        <div class="modal-content">
+  
+  
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form>
+            
+				<div class="form-group">
+				<label>First Name</label>
+				<input type="text"  #fname class="form-control required" [(ngModel)]="profile.firstName" name="first">              
+				</div>
+
+				<div class="form-group">
+				<label>Last Name</label>
+				<input type="text"  #lname class="form-control required" [(ngModel)]="profile.lastName" name="last">              
+				</div>
+				<div class="form-group">
+				<label>Mobile No</label>
+				<input type="text"  #mobile class="form-control required" [(ngModel)]="profile.mobileNo" name="mobile">              
+				</div>
+				<div class="form-group">
+				<label>Location</label>
+				<input type="text"  #location class="form-control required" [(ngModel)]="profile.location" name="location">              
+				</div>                            
+                                   
+
+            
+              
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <div class="form-group">
+                  <button type="button" #closeProfile class="btn btn-danger" (click)="myprofile(token);" data-dismiss="modal">Close</button>
+                </div>
+  
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary" (click)="updateuserprofile(fname.value,lname.value,mobile.value,profile.email,location.value,profile.publicKey)">Save changes</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+   <!-- The Modal -->
+    <div class="modal fade" id="changepassword">
+      <div class="modal-dialog">
+        <div class="modal-content">
+  
+  
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form>
+            
+				
+				<div class="form-group">
+				<label>Current Password</label>
+				<input type="password"  #curpass class="form-control required" name="last">              
+				</div>
+				<div class="form-group">
+				<label>New Password</label>
+				<input type="password"  #newpass class="form-control required" name="last">              
+				</div>
+				<div class="form-group">
+				<label>Confirm Password</label>
+				<input type="password"  #confirmpass class="form-control required" name="mobile">              
+				</div>          
+
+            
+              
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <div class="form-group">
+                  <button #closeModal type="button" class="btn btn-danger" (click)="myprofile(token);" data-dismiss="modal">Close</button>
+                </div>
+  
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary" (click)="updateuserpassword(profile.email,curpass.value,newpass.value,confirmpass.value,profile.publicKey)">Save changes</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  </div>
+  

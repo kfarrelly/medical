@@ -1,0 +1,45 @@
+<!-- main app container -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-3"></div>
+            <div class="col-md-6 ">
+              <h3>Login User</h3>
+              
+                <form [formGroup]="signinform" (ngSubmit)="onSubmit(email.value,password.value)">
+                   
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input #email type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input #password type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group">
+                        <button class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+                <p> Click to <a [routerLink]="'/signup'">Sign up</a>
+            <span style="color: blue"> /</span> <a  [routerLink]="'/distributorqr'">Forget Password</a></p>
+  
+                
+
+
+   
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+

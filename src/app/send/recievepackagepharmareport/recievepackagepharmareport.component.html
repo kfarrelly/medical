@@ -1,0 +1,39 @@
+<app-dashboard></app-dashboard>
+<div class="container">
+	<br>
+	<br>
+
+    <div  class="table-responsive">
+      <br>
+      <table class="table table-striped table-dark table-hover text-center">
+        
+          <thead class="bg-success">
+		  <tr>
+		<th colspan="3"></th>
+		<th><button type="button"   (click)="exporttocsv()"  class="btn btn-primary" >Export as CSV</button></th>
+		</tr>
+              <tr>            
+				<th>Serial Number</th>
+				<th>Level</th>
+				<th>Location</th> 
+				<th>Date</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let list of TMlist">
+              <td><a [routerLink]="['/package/details',list.serial]">{{list.serial}}</a></td>
+              <td>{{list.level}}</td>
+              <td>{{list.location}}</td>       
+           
+			 <td> {{list.time | date: 'dd/MM/yyyy h:mm:ss a'}}</td>
+              </tr>
+           
+          </tbody>
+          <tfoot class="bg-success"><tr>
+		<th colspan="3"></th>
+		<th><button type="button"   (click)="exporttocsv()"  class="btn btn-primary" >Export as CSV</button></th>
+		</tr></tfoot>
+        </table>
+      </div>
+    
+</div>

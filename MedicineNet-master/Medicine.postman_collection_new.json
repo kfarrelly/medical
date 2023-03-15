@@ -1,0 +1,872 @@
+{
+	"info": {
+		"_postman_id": "5cfcd8e1-90d0-421b-91f4-a6d062d13544",
+		"name": "Medicine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "generateKey",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "165.227.119.244:8080/generateKey",
+					"host": [
+						"165",
+						"227",
+						"119",
+						"244"
+					],
+					"port": "8080",
+					"path": [
+						"generateKey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "batch_statuses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "165.227.119.244:8008/batch_statuses?id=70b2a23ae8ec8bde0c3356a5a2cb1bb2c9937ac7889d2e40d2a169b42758e4bc7833b594ba414033f5aefcc030a5561948d8b2665dad889e2b2e9d07f1b7121b&wait",
+					"host": [
+						"165",
+						"227",
+						"119",
+						"244"
+					],
+					"port": "8008",
+					"path": [
+						"batch_statuses"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "70b2a23ae8ec8bde0c3356a5a2cb1bb2c9937ac7889d2e40d2a169b42758e4bc7833b594ba414033f5aefcc030a5561948d8b2665dad889e2b2e9d07f1b7121b"
+						},
+						{
+							"key": "wait",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ID Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/ID/92516001e56fdda92eedab260100dd0214fb2e2ba9014fd7636e45b1a5eac62263a2a8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ID",
+						"92516001e56fdda92eedab260100dd0214fb2e2ba9014fd7636e45b1a5eac62263a2a8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Entity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/entity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"entity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"createAdmin\",\n    \"payloaddata\": {\n        \"name\": \"Admin\",\n        \"location\": {\n            \"type\": 1,\n            \"body\": {\n                \"address\": \"jaipur\"\n            }\n        },\n        \"email\": \"kkm7668@gmail.com\"\n    },\n    \"private\": \"6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc\",\n    \"public\": \"028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Admin Profile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"updateAdminProfile\",\n    \"payloaddata\": {\n        \"name\": \"AdminUpdatedName\",\n        \"location\": {\n            \"type\": 1,\n            \"body\": {\n                \"address\": \"jaipur_UpdatedAddress\"\n            }\n        },\n        \"email\": \"adminUpdated@gmail.com\"\n    },\n    \"private\": \"6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc\",\n    \"public\": \"028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Users [Manufacturer]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"registerUsers\",\n    \"payloaddata\": {\n        \"name\": \"manufacturer\",\n        \"email\": \"manufacturer@gmail.com\",\n        \"contactNumber\": 8432862796,\n        \"role\": 2,\n        \"location\": {\n            \"type\": 1,\n            \"body\": {\n                \"address\": \"jaipur\"\n            }\n        },\n        \"publicKey\": \"031254bfa1239a0cd72ff3bc0f8f6c07357bd0507b443e65703918873b835fdf53\"\n    },\n    \"private\": \"6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc\",\n    \"public\": \"028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user profile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"updateUserProfile\",\n    \"payloaddata\": {\n        \"name\": \"manufacturerUpdate\",\n        \"email\": \"manufacturerUpdate@gmail.com\",\n        \"contactNumber\": 6972682348,\n        \"role\": 2,\n        \"location\": {\n            \"type\": 1,\n            \"body\": {\n                \"address\": \"jaipurUpdated\"\n            }\n        }\n    },\n    \"public\": \"031254bfa1239a0cd72ff3bc0f8f6c07357bd0507b443e65703918873b835fdf53\",\n    \"private\": \"3f31adfceac912098ed0473774add61425e15de60d2fbfe43459cb3e03ac84ed\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Users [Transporter]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"registerUsers\",\n    \"payloaddata\": {\n        \"name\": \"transporter\",\n        \"email\": \"transporter@gmail.com\",\n        \"contactNumber\": 8432862796,\n        \"role\": 7,\n        \"location\": {\n            \"type\": 1,\n            \"body\": {\n                \"address\": \"jaipur\"\n            }\n        },\n        \"publicKey\": \"029ac93671855a562c0a7dbe32975f9cf7ca053c1fdef4fc12d6d7fdb4cd85d1eb\"\n    },\n    \"private\": \"6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc\",\n    \"public\": \"028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Users [Wholesaler]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"registerUsers\",\n    \"payloaddata\": {\n        \"name\": \"wholesaler\",\n        \"email\": \"wholesaler@gmail.com\",\n        \"contactNumber\": 8432862796,\n        \"role\": 3,\n        \"location\": {\n            \"type\": 1,\n            \"body\": {\n                \"address\": \"shapura\"\n            }\n        },\n        \"publicKey\": \"033379f327b678a46d5d6c35cc67e3016e79b2ea522844e248528e9795e1e7f0ed\"\n    },\n    \"private\": \"6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc\",\n    \"public\": \"028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Users [Distributer]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"registerUsers\",\n    \"payloaddata\": {\n        \"name\": \"distributer\",\n        \"email\": \"distributer@gmail.com\",\n        \"contactNumber\": 8432862796,\n        \"role\": 4,\n        \"location\": {\n            \"type\": 1,\n            \"body\": {\n                \"address\": \"kotputli\"\n            }\n        },\n        \"publicKey\": \"03e3fd7d78021f459412cf95dd3f70453ca4392cf0e072ed3adc0f0eed697c4eb2\"\n    },\n    \"private\": \"6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc\",\n    \"public\": \"028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Users [Pharma]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"registerUsers\",\n    \"payloaddata\": {\n        \"name\": \"pharma\",\n        \"email\": \"pharma@gmail.com\",\n        \"contactNumber\": 8432862796,\n        \"role\": 5,\n        \"location\": {\n            \"type\": 1,\n            \"body\": {\n                \"address\": \"Delhi\"\n            }\n        },\n        \"publicKey\": \"02b42063bc646fc54ab6bfe59b6c4ba0d8b9d32e7135652794f8be9349b207704f\"\n    },\n    \"private\": \"6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc\",\n    \"public\": \"028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserUpdateActive ( Admin)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"updateUserActive\",\n    \"payloaddata\": {\n\n        \"userRole\": 5,\n        \"userActive\":false,\n        \"userPublicKey\": \"031254bfa1239a0cd72ff3bc0f8f6c07357bd0507b443e65703918873b835fdf53\"\n    },\n    \"private\": \"6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc\",\n    \"public\": \"028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Medicine",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"createMedicine\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"description\": \"low fever\",\n        \"location\": {\n            \"type\": 1,\n            \"body\": {\n                \"address\": \"jaipur\"\n            }\n        },\n        \"uintDescription\": {\n            \"units\": 12\n        }\n    },\n    \"public\": \"031254bfa1239a0cd72ff3bc0f8f6c07357bd0507b443e65703918873b835fdf53\",\n    \"private\": \"3f31adfceac912098ed0473774add61425e15de60d2fbfe43459cb3e03ac84ed\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send To Wholesaler",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"sendToWholesaler\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"wholesaler\": {\n            \"address\": \"033379f327b678a46d5d6c35cc67e3016e79b2ea522844e248528e9795e1e7f0ed\",\n            \"comment\": \"In Transaction\"\n        },\n        \"transporterid\": \"92516007b0d61bc5c1848d8a17b6fffeb33533a1ea7688612c57b0ce895dd1a0692498\"\n    },\n    \"public\": \"031254bfa1239a0cd72ff3bc0f8f6c07357bd0507b443e65703918873b835fdf53\",\n    \"private\": \"3f31adfceac912098ed0473774add61425e15de60d2fbfe43459cb3e03ac84ed\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pick Packages[M]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"pickPackage\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"comment\": \"Manufecturer package Picked-up\"\n    },\n    \"public\": \"029ac93671855a562c0a7dbe32975f9cf7ca053c1fdef4fc12d6d7fdb4cd85d1eb\",\n    \"private\": \"b25475aa4ff0a191ba7e443e371a6c3905739232a07a32a97d8696ab12699905\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Medicine Status Update 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"medicineStatusUpdate\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"physicalState\": {\n            \"timestamp\": 1556707978.833,\n            \"location\": {\n                \"type\": 1,\n                \"body\": {\n                    \"address\": \"jaipur\"\n                }\n            },\n            \"temprature\": 12\n        },\n        \"userRole\":7\n    },\n    \"public\": \"029ac93671855a562c0a7dbe32975f9cf7ca053c1fdef4fc12d6d7fdb4cd85d1eb\",\n    \"private\": \"b25475aa4ff0a191ba7e443e371a6c3905739232a07a32a97d8696ab12699905\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Medicine Status Update 2(Admin)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"medicineStatusUpdate\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"physicalState\": {\n            \"timestamp\": 1556717978.833,\n            \"location\": {\n                \"type\": 1,\n                \"body\": {\n                    \"address\": \"shapura\"\n                }\n            },\n            \"temprature\": 12.5\n        }\n    },\n    \"private\": \"6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc\",\n    \"public\": \"028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Receive From Manufecturer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"recieveFromManufecturer\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"status\": 4,\n        \"comment\": \"Delivered\"\n    },\n    \"public\": \"033379f327b678a46d5d6c35cc67e3016e79b2ea522844e248528e9795e1e7f0ed\",\n    \"private\": \"c9816932be07029f1cc27cea4f11eed99745c19c06a2b29efde6e3afad3b8333\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send To Distributer(Admin)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"sendToDistributer\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"distributer\": {\n            \"address\": \"03e3fd7d78021f459412cf95dd3f70453ca4392cf0e072ed3adc0f0eed697c4eb2\",\n            \"comment\": \"In Transaction\"\n        },\n        \"transporterid\": \"92516007b0d61bc5c1848d8a17b6fffeb33533a1ea7688612c57b0ce895dd1a0692498\",\n        \"admin\":true\n    },\n     \"private\": \"6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc\",\n    \"public\": \"028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pick Packages[W]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"pickPackage\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"comment\": \"Wholesaler package Picked-up\"\n    },\n    \"public\": \"029ac93671855a562c0a7dbe32975f9cf7ca053c1fdef4fc12d6d7fdb4cd85d1eb\",\n    \"private\": \"b25475aa4ff0a191ba7e443e371a6c3905739232a07a32a97d8696ab12699905\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Medicine Status Update 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"medicineStatusUpdate\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"physicalState\": {\n            \"timestamp\": 1556727978.833,\n            \"location\": {\n                \"type\": 1,\n                \"body\": {\n                    \"address\": \"shapura\"\n                }\n            },\n            \"temprature\": 13        },\n                        \"userRole\":7\n\n    },\n    \"public\": \"029ac93671855a562c0a7dbe32975f9cf7ca053c1fdef4fc12d6d7fdb4cd85d1eb\",\n    \"private\": \"b25475aa4ff0a191ba7e443e371a6c3905739232a07a32a97d8696ab12699905\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Medicine Status Update 4",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"medicineStatusUpdate\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"physicalState\": {\n            \"timestamp\": 1556737978.833,\n            \"location\": {\n                \"type\": 1,\n                \"body\": {\n                    \"address\": \"kotputli\"\n                }\n            },\n            \"temprature\": 14\n        },            \"userRole\":7\n\n    },\n    \"public\": \"029ac93671855a562c0a7dbe32975f9cf7ca053c1fdef4fc12d6d7fdb4cd85d1eb\",\n    \"private\": \"b25475aa4ff0a191ba7e443e371a6c3905739232a07a32a97d8696ab12699905\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Receive From Wholesaler",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"recieveFromWholesaler\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"status\": 4,\n        \"comment\": \"Delivered\"\n    },\n    \"public\": \"03e3fd7d78021f459412cf95dd3f70453ca4392cf0e072ed3adc0f0eed697c4eb2\",\n    \"private\": \"62ed861662bd951ac281b2907ab12d46dad16b058f0e63fd5bd993b513705f54\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send To Pharme",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"sendToPharma\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"pharma\": {\n            \"address\": \"02b42063bc646fc54ab6bfe59b6c4ba0d8b9d32e7135652794f8be9349b207704f\",\n            \"comment\": \"In Transaction\"\n        },\n        \"transporterid\": \"92516007b0d61bc5c1848d8a17b6fffeb33533a1ea7688612c57b0ce895dd1a0692498\"\n    },\n   \"public\": \"03e3fd7d78021f459412cf95dd3f70453ca4392cf0e072ed3adc0f0eed697c4eb2\",\n    \"private\": \"62ed861662bd951ac281b2907ab12d46dad16b058f0e63fd5bd993b513705f54\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pick Packages[D]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"pickPackage\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"comment\": \"Distributer package Picked-up\"\n    },\n    \"public\": \"029ac93671855a562c0a7dbe32975f9cf7ca053c1fdef4fc12d6d7fdb4cd85d1eb\",\n    \"private\": \"b25475aa4ff0a191ba7e443e371a6c3905739232a07a32a97d8696ab12699905\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Medicine Status Update 5",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"medicineStatusUpdate\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"physicalState\": {\n            \"timestamp\": 1556747978.833,\n            \"location\": {\n                \"type\": 1,\n                \"body\": {\n                    \"address\": \"kotputli\"\n                }\n            },\n            \"temprature\": 13\n        },            \"userRole\":7\n    },\n    \"public\": \"029ac93671855a562c0a7dbe32975f9cf7ca053c1fdef4fc12d6d7fdb4cd85d1eb\",\n    \"private\": \"b25475aa4ff0a191ba7e443e371a6c3905739232a07a32a97d8696ab12699905\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Medicine Status Update 6",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"medicineStatusUpdate\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"physicalState\": {\n            \"timestamp\": 1556757978.833,\n            \"location\": {\n                \"type\": 1,\n                \"body\": {\n                    \"address\": \"Delhi\"\n                }\n            },\n            \"temprature\": 12\n        },            \"userRole\":7\n    },\n    \"public\": \"029ac93671855a562c0a7dbe32975f9cf7ca053c1fdef4fc12d6d7fdb4cd85d1eb\",\n    \"private\": \"b25475aa4ff0a191ba7e443e371a6c3905739232a07a32a97d8696ab12699905\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Receive From Distributer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"recieveFromDistributer\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"status\": 4,\n        \"comment\": \"Delivered\"\n    },\n    \"public\": \"02b42063bc646fc54ab6bfe59b6c4ba0d8b9d32e7135652794f8be9349b207704f\",\n    \"private\": \"33432728fce0b919b80b06389a8822a38a1fe232e4a0caccfd6692580eb6e8dd\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Medicine Status Update 7",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"medicineStatusUpdate\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"physicalState\": {\n            \"timestamp\": 1556767978.833,\n            \"location\": {\n                \"type\": 1,\n                \"body\": {\n                    \"address\": \"Delhi\"\n                }\n            },\n            \"temprature\": 13\n        }\n        ,            \"userRole\":5\n    },\n    \"public\": \"02b42063bc646fc54ab6bfe59b6c4ba0d8b9d32e7135652794f8be9349b207704f\",\n    \"private\": \"33432728fce0b919b80b06389a8822a38a1fe232e4a0caccfd6692580eb6e8dd\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Medicine Status Update 8(Admin)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"medicineStatusUpdate\",\n    \"payloaddata\": {\n        \"serialNumber\": \"sr0101\",\n        \"physicalState\": {\n            \"timestamp\": 1556777978.833,\n            \"location\": {\n                \"type\": 1,\n                \"body\": {\n                    \"address\": \"Delhi\"\n                }\n            },\n            \"temprature\": 12\n        }\n    },\n     \"private\": \"6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc\",\n    \"public\": \"028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,216 @@
+<app-dashboard></app-dashboard>
+<br>
+<div class="container">
+<div class="row" *ngFor="let distdata  of list"> 
+  <div class="col">
+    <div class="card" style="padding:18px;">
+      <p style="text-align:center"><b>Medicine Id: </b> {{list[0].MedicineId}}</p>
+      <div class="row">
+	  <div class="col" ><b>Product Name: </b> {{distdata.serial}}</div>
+	  <div class="col"><b>Batch N: </b> {{distdata.location}}</div>
+	  <div class="col"><b>Global Valuated Material N: </b> {{distdata.MedicineCurrentTempurature}}<sup>o</sup>C</div>
+    </div><br>
+
+	  <div class="row">
+    <div class="col"><b>Customer's Product Name: </b> {{distdata.medicine}}</div>
+	  <div class="col"><b>Batch Certificate N: </b> {{distdata.weight}}</div>
+	  <div class="col"><b>Customer N: </b> {{distdata.customern}}</div>
+    </div><br>
+
+    <div class="row">
+      <div class="col"><b>Customer Name: </b> {{distdata.customername}}</div>
+      <div class="col"><b>Ship to N: </b> {{distdata.shipton}}</div>  
+      <div class="col"><b>Country Code: </b> {{distdata.countrycode}}</div>
+      </div><br>
+
+      <div class="row">
+      <div class="col"><b>Ship to Party: </b> {{distdata.shiptoparty}}</div>
+      <div class="col"><b>Pharma Outbound Delivery No: </b> {{distdata.pharmadeliveryno}}</div>
+      <div class="col"><b>Sales Order No vs. End Customer: </b> {{distdata.salesorderendcustomer}}</div>
+      </div><br>
+
+      <div class="row">
+        <div class="col"><b>Purchase Order N of End Customer: </b> {{distdata.purchaseorderendcustomer}}</div>
+        <div class="col"><b>Shipped Quantity: </b> {{distdata.shippedquantity}}</div>
+        <div class="col"><b>Unit: </b> {{distdata.unit}}</div>
+        </div><br>
+
+        <div class="row">
+          <div class="col col-4"></div>
+          <div class="col col-5"><b>Additional Logistic Information</b></div>
+          <div class="col col-3"></div>
+        </div><br>
+
+        <div class="row">
+          <div class="col"><b>Product Name: </b> {{distdata.aproductname}}</div>
+          <div class="col"><b>Dosage Form: </b> {{distdata.dosageform}}</div>
+          <div class="col"><b>Package type: </b> {{distdata.packagetype}}</div>
+          </div><br>
+
+
+            <div class="row">
+              <div class="col"><b>Package Size: </b> {{distdata.packagesize}}</div>
+              <div class="col"><b>Global Material No.: </b> {{distdata.globelmaterialno}}</div>
+              <div class="col"><b>Batch N: </b> {{distdata.batchn}}</div>
+              </div><br>
+
+              <div class="row">
+                <div class="col"><b>Date of Manufacturing: </b> {{distdata.dateofmanufecture}}</div>
+                <div class="col"><b>Release Date: </b> {{distdata.releasedate}}</div>
+                <div class="col"><b> Expiry Date:</b>{{distdata.expirydate}}</div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col"><b>Production Qty: </b> {{distdata.productionqty}}</div>
+                  <div class="col"><b> </b> </div>
+                  <div class="col"><b> </b></div>
+                  </div><br>
+
+                <div class="row">
+                  <div class="col col-4"></div>
+                  <div class="col col-5"><b>Packaging Information</b></div>
+                  <div class="col col-3"></div>
+                </div><br>
+
+                <div class="row">
+                  <div class="col"><b>Product Name: </b> {{distdata.pproductname}}</div>
+                  <div class="col"><b>Global Material No.: </b> {{distdata.pglobelmaterialno}}</div>
+                  <div class="col"><b>Local Material No: </b> {{distdata.plocalmaterialno}}</div>
+                  </div><br>
+
+                  <div class="row">
+                    <div class="col"><b>Packaging Site: </b> {{distdata.apackagingsite}}</div>
+                    <div class="col"><b>Manufacturing License: </b> {{distdata.manufacturinglicense}}</div>
+                    <div class="col"><b>GMV Certificate No: </b> {{distdata.gmvcertificateno}}</div>
+                    </div><br>
+
+                    <div class="row">
+                      <div class="col col-4"></div>
+                      <div class="col col-5"><b>For Tests, Requirments,Results and Conclusion refer to the following Certificate(s)</b></div>
+                      <div class="col col-3"></div>
+                    </div><br>
+
+                    <div class="row">
+                      <div class="col"><b>Certificate No: </b> {{distdata.certificateno}}</div>
+                      <div class="col"><b>Product Name: </b> {{distdata.productn}}</div>
+                      <div class="col"><b>Global Material N: </b> {{distdata.globalmaterialn}}</div>
+                      </div><br>
+
+                      <div class="row">
+                        <div class="col"><b>Local Material N: </b> {{distdata.localmaterialn}}</div>
+                        <div class="col"><b>Release Date: </b> {{distdata.releasedate}}</div>
+                        <div class="col"><b>Batch N: </b> {{distdata.abatchn}}</div>
+                        </div><br>
+
+                        <div class="row">
+                          <div class="col"><b>Manufacturing Site: </b> {{distdata.amanufacturingsite}}</div>
+                          <div class="col"><b>Manufacturing License: </b> {{distdata.amanufacturinglicense}}</div>
+                          <div class="col"><b> </b></div>
+                          </div><br>
+    <div class="row">
+      <div class="col"  style="margin-left:25%; text-align: left">
+        <b style="color:blue;text-align: center">Medicine Owner </b>
+        <span id="styleStatus">{{distdata.status}}</span>
+      </div>
+    </div>
+	  <div class="row">
+		<div class="col" style="text-align:center;">
+    <button class="form-control btn-defult" *ngIf="myrole>1" (click)="editMedicine(distdata._id)" data-toggle="modal" data-target="#exampleModalCenter"> <b>Update Status</b> </button>
+    
+    
+		</div>
+		</div>
+    </div>
+  </div>  
+  </div>
+  
+  <!-- part 2 for medicine status -->
+  <div class="row" *ngFor="let distdata  of list2"> 
+  <div class="col">
+    <div class="card" style="padding:18px;">
+    <!--  <p style="text-align:center"><b>Medicne Id:</b> {{distdata.MedicineId}}</p> -->
+    <div class="row">
+      <div class="col" style="margin-left:8%; text-align: left">
+        <b>Date:</b>{{distdata.time | date:'dd/MM/yyyy'}}
+      </div>
+      <div class="col"></div>
+      <div class="col" >
+        <b>Time:</b>{{distdata.time | date:'hh:mm:ss'}}
+      </div>
+    </div>
+      <div class="row">
+	  <div class="col"  style="margin-left:8%;"><b>Serial No: </b> {{distdata.serial}} </div>
+	  <div class="col"><b>Location: </b> {{distdata.location}}</div>
+	  <div class="col"><b>Temperature: </b> {{distdata.barcode}}<sup>o</sup>C</div>
+	  </div>
+	  <div class="row">
+	  <div class="col"   style="margin-left:8%;"><b>Weight: </b> {{distdata.weight}}</div>
+	  <div class="col"><b>Manufacture Date: </b> {{distdata.Mdate}}</div>
+	  <div class="col"><b>Expiry Date: </b> {{distdata.Edate}}</div>
+    </div>
+    <div class="row">
+      <div class="col" style="margin-left:8%; text-align: left;">
+        <b>Medicine Status: </b>
+        <span id='styleStatus'>{{distdata.status}}</span>
+      </div>
+    </div>	  
+    </div>
+  </div>  
+  </div>
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Status Update</h5>
+        
+      </div>
+      <form [formGroup]="registerForm1" (ngSubmit)="medicineUpdate(editlist.serial,editlist.medicine,temperature.value,location.value,editlist.weight,editlist.Mdate,editlist.Edate,editlist.MedicineId,editlist.role,now)">
+      <div class="modal-body">
+	  
+	        <div class="row">
+          <div class="col"><div class="form-group">
+              <label style="margin-left: 35px">Temperature</label>
+              <input #temperature  formControlName="temperature011" type="number" class="form-control required" [ngClass]="{ 'is-invalid': submitted && f1.temperature011.errors }" placeholder=" Enter Current Temperature" maxlength="5">
+              <div *ngIf="submitted && f1.temperature011.errors" class="invalid-feedback">
+                <div *ngIf="f1.temperature011.errors.required" style="margin-left: 35px">Temperature required </div>
+              </div>
+            </div></div>           
+            </div>   
+         <div class="row">          
+              <div class="col"><div class="form-group">
+                <label style="margin-left: 35px">Location</label>
+                <input  type="text" #location formControlName="location011" class="form-control required" [ngClass]="{ 'is-invalid': submitted && f1.location011.errors }" placeholder="Enter Current Location" maxlength="30">
+                <div *ngIf="submitted && f1.location011.errors" class="invalid-feedback">
+                    <div *ngIf="f1.location011.errors.required" style="margin-left: 35px">Location required </div>
+                  </div>
+                
+              </div></div>
+          </div>       	
+
+          
+       </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-danger" #completeModal  data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+         </div>
+        </form>
+      
+    </div>
+  </div>
+</div>
+
+
+
+  
+  
+  

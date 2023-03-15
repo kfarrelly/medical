@@ -1,0 +1,51 @@
+.container{
+   
+    background-color: rgb(0, 0, 0) !important;   
+    margin-top: 35px;   
+    border-top-right-radius: 70px;
+    border-top-left-radius: 70px;
+}
+
+body{
+    background-color: rgb(7, 71, 167) !important;
+}
+h4{
+    border-radius: 38px;
+    border: 12px solid black;
+    border-bottom-width: 13px;
+    margin-top: -24px;
+    background-color: rgb(23, 0, 222);
+    color: white;
+    font-family: fantasy;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h2{
+    font-size: 2rem;
+    color: white;
+    font-family: inherit;
+    padding: 12px;
+    border-top: 2px solid indianred;
+    border-bottom: 2px solid indianred;
+    border-right: 2px solid indianred;
+    border-right-width: 12px;
+    border-left: 2px solid indianred;
+    border-left-width: 12px;
+}
+.col{
+    flex-basis: 0;
+    flex-grow: 1;
+    background-color: ghostwhite;
+    margin-left: 5%;   
+    max-width: 90%;
+}
+   
+#rows{
+	 padding: 2px;
+}
+
+#content{
+    background-color: ghostwhite !important;   
+}

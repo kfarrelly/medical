@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+    
+  }
+
+ 
+#heading{
+    background-color: rgb(18, 50, 190); 
+    color:white;
+}
+.pd{
+  background: navy;
+}
+td a {
+  display:block;
+  width:100%;
+  background-clip: padding-box; 
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+  border: 2px solid green;
+}
+a {
+  text-decoration: none !important;
+}

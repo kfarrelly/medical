@@ -1,0 +1,35 @@
+.navbar {
+    background-color: #000000 !important;
+    color: white;
+}
+.name{
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: rgb(206, 223, 255) !important;
+}
+
+
+.navbar-dark .navbar-nav .nav-link.bellicon{
+ font-size: 0px;
+    background-image: url(notification-icon.png);
+    background-repeat: no-repeat;
+    background-size: 29px;
+    padding: 18px 25px;
+    background-position: center;
+    position: relative;
+}
+.navbar-dark .navbar-nav .nav-link.bellicon span {
+    position: absolute;
+    font-size: 10px;
+    background-color: #930e07;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 19px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    top: 0;
+}

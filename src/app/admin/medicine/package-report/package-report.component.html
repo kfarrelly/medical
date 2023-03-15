@@ -1,0 +1,90 @@
+<app-dashboard></app-dashboard>
+
+<div class="container">
+  <div class="table-responsive">
+    <br>
+    <table class="table table-striped table-dark table-hover text-center">
+
+      <thead class="pd">
+		<tr>
+		<th colspan="3"></th>
+		<th><button type="button"   (click)="exporttocsv()"  class="btn btn-primary" >Export as CSV</button></th>
+		</tr>
+        <tr>
+          <th> Serial Number</th>
+          <th>Location</th>
+          <th>Level</th>
+          <th>Time</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let x of list; let i = index">
+          <td><a [routerLink]="['/package/details',x.serial]" style="color:white">{{x.serial}}</a></td>
+          <td>{{x.location}}</td>
+          <td>{{x.level}}</td>
+          <td>{{x.time | date: 'dd/MM/yyyy h:mm:ss a'}}</td>
+        </tr>
+
+      </tbody>
+      <tfoot class="pd">
+        		<tr>
+		<th colspan="3"></th>
+		<th><button type="button"   (click)="exporttocsv()"  class="btn btn-primary" >Export as CSV</button></th>
+		</tr>
+
+      </tfoot>
+    </table>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Package Transportation</h5>
+
+      </div>
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Serial</label>
+              <input #serial type="text" [(ngModel)]="serialvalue" class="form-control required">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Wholesailer</label>
+              <select [(ngModel)]="wId1" class="form-control">
+                <option *ngFor="let wid of wlist" [value]="wid.publicKey">{{wid.firstName}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Transporter</label>
+              <select [(ngModel)]="tId1" class="form-control">
+                <option *ngFor="let wid of tlist" [value]="wid.userId">{{wid.firstName}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" #completeModal data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="mTransection(serial.value,wId1,tId1)">Send</button>
+      </div>
+    </div>
+  </div>
+</div>

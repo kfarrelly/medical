@@ -1,0 +1,98 @@
+<app-dashboard></app-dashboard>
+
+<div class="container">
+  <div class="table-responsive">
+    <br>
+    <table class="table table-striped table-dark table-hover text-center">
+
+      <thead class="pd">
+        <tr>
+          <th>Serial Number</th>
+          <th>Medicine Name</th>
+          <th>Manufactured Date</th>
+          <th>Location</th>
+          <th>Weight(Kg)</th>
+          <th>Action</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let x of list; let i = index">
+		<ng-container *ngIf="((x.parent==0 || !x.parent) && x.serial)">
+          <td><a [routerLink]="['/medicine/details',x.serial]" style="color:white">{{x.serial}}</a></td>
+          <td>{{x.medicine}}</td>
+          <td>{{x.Mdate}}</td>
+          <td>{{x.location}}</td>
+          <td>{{x.weight}}</td>
+          <td><button type="button" *ngIf="myrole>1" (click)="deleteMedicine(x._id)" class="btn btn-danger">Delete</button></td>
+          <td><button type="button" (click)="serialId(x.serial)" class="btn btn-info" data-toggle="modal"
+              data-target="#exampleModalCenter" *ngIf="myrole>1">Send to Wholesaler</button></td>
+		</ng-container>
+        </tr>
+
+      </tbody>
+      <tfoot class="pd">
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Medicine Transportation</h5>
+
+      </div>
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Serial</label>
+              <input #serial type="text" [(ngModel)]="serialvalue" class="form-control required">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Wholesaler</label>
+              <select [(ngModel)]="wId1" class="form-control">
+                <option *ngFor="let wid of wlist" [value]="wid.publicKey">{{wid.firstName}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Transporter</label>
+              <select [(ngModel)]="tId1" class="form-control">
+                <option *ngFor="let wid of tlist" [value]="wid.userId">{{wid.firstName}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" #completeModal data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="mTransection(serial.value,wId1,tId1)">Send</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 ">
+				<label style="color: white">Email-Id</label><br>
+				
+				<input #eid type="text" placeholder="Enter Your Email Id" class="form-control required" style="border: 2px solid green" >
+				<br>
+				<label style="color: white">Enter New Password</label><br>
+				<input #pass type="password" placeholder="Enter New Password" class="form-control required" style="border: 2px solid green" >
+				<br>
+				<button type="submit" (click)="sendRequest(eid.value,pass.value)" class="btn btn-success">Submit</button>
+				
+				<p> <a [routerLink]="'/login'" style="margin-left:10px"> Click here to Login</a></p>
+			  </div>
+		</div>
+	</div>
+</div> 
+  
+
+  

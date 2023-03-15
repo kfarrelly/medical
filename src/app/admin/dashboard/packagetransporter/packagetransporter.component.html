@@ -1,0 +1,87 @@
+<app-dashboard></app-dashboard>
+<div class="container">
+	<br>
+	<br>
+
+	<form>
+	
+        <div class="row"> 
+          <div class="col"><div class="form-group">
+            <label>Packing Barcode</label>
+			<input type="file" style="margin-left:20px;" accept="image/*" (change)="onFileChange($event)">
+            <input #br type="text" value="{{barcodevalue}}" class="form-control required" >
+          </div>
+        </div>   
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Current Status</label>
+                <select #status class="form-control" >
+                  <option >Manufecturer package Picked-up</option>
+                  <option >Wholesaler package Picked-up</option>
+                  <option >Distributer package Picked-up</option>
+                    </select>   
+              </div>
+            </div>
+          </div>
+            <div class="row text-right">
+             		<div class="col">
+             			<div class="form-group">
+                  			<button type="reset" (click)="getByPackageId(br.value, status.value,4)" class="btn btn-primary">Submit</button>
+							&nbsp; &nbsp;
+							<!-- <button type="reset" (click)="getByPackageId(br.value, status.value,5)" class="btn btn-primary">Reject</button> -->
+                		</div>
+                </div>
+             </div>
+	</form>
+
+
+  <div *ngIf="displayTable" class="table-responsive">
+    <br>
+    <table class="table table-striped table-dark table-hover text-center">
+      
+        <thead class="bg-success">
+            <tr>            
+                <th> Serial Number</th>
+                <th>Level</th>
+                <th>Location</th>             
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a [routerLink]="['/package/details',mlist[0].serial]">{{mlist[0].serial}}</a></td>
+            <td>{{mlist[0].level}}</td>
+            <td>{{mlist[0].location}}</td>
+            </tr>
+         
+        </tbody>
+        <tfoot class="bg-success"><tr><th></th><th></th><th></th></tr></tfoot>
+      </table>
+    </div>
+
+
+
+<div  class="table-responsive">
+  <br>
+  <table class="table table-striped table-dark table-hover text-center">
+    
+      <thead class="bg-success">
+          <tr>            
+              <th>Serial Number</th>
+              <th>Level</th>
+              <th>Location</th>          
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let list of TMlist">
+          <td><a [routerLink]="['/package/details',list.serial]">{{list.serial}}</a></td>
+          <td>{{list.level}}</td>
+          <td>{{list.location}}</td>
+          </tr>
+       
+      </tbody>
+      <tfoot class="bg-success"><tr><th></th><th></th><th></th></tr></tfoot>
+    </table>
+  </div>
+</div>

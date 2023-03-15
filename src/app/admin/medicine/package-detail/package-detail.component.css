@@ -1,0 +1,17 @@
+.form-control {
+    margin-top: 10px;
+    margin-left: 8%;
+    margin-right: 15%;
+    display: block;
+    width: 87%;
+}
+
+#styleStatus{
+    color: rgb(20, 255, 20);
+    
+    background-color: black;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+}

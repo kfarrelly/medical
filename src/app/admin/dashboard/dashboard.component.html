@@ -1,0 +1,179 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <a class="navbar-brand" class="name">Medicine</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" [ngClass]="{ 'show': isShown }" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul *ngIf="rolevalue" class="navbar-nav mr-auto">   
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/medicinedashboard" routerLinkActive="active" >DashBoard</a>
+          </li>
+		   <li class="nav-item">
+        <a class="nav-link" routerLink="/agent/request" routerLinkActive="active" >View User Request</a>
+      </li> 
+      
+	  <li class="nav-item">
+        <a class="nav-link" routerLink="/agent/list" routerLinkActive="active" >Valid Users</a>
+      </li> 
+      <li class="nav-item">
+          <a class="nav-link" routerLink="/medicine/list" routerLinkActive="active" >View Medicine</a>
+        </li>  
+		<li class="nav-item">
+        <a class="nav-link bellicon" routerLink="/notification" routerLinkActive="active" >View Notifications <span>{{list.length}}</span></a>
+      </li>
+
+      <li class="nav-item">
+          <div class="form-group">                        
+              <select class="form-control" (change)="navigate($event.target.value)">
+                  <option value="null">Select Role</option>
+                  <option value="manufacturedashboard">Manufacture</option>
+                  <option value="wholesalerdashboard">Wholesaler</option>
+                  <option value="distributordashboard">Distrubuter</option>
+                  <option value="pharmadashboard">Pharma</option>     
+                  <option value="transporterdashboard">Transporte</option>                              
+              </select>
+            </div>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="/distributordashboard" routerLinkActive="active" >View Distributor</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/manufacturedashboard" routerLinkActive="active" >View Manufacture</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/pharmadashboard" routerLinkActive="active" >View Pharma</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/transporterdashboard" routerLinkActive="active" >View Transporter</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/wholesalerdashboard" routerLinkActive="active" >View Wholesaler</a>
+      </li>  -->
+	  
+    </ul>
+	  <ul *ngIf="Mrolevalue" class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link"></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/medicinedashboard" routerLinkActive="active" >DashBoard</a>
+          </li>     
+		<li class="nav-item">
+            <a class="nav-link" routerLink="/medicine/add" routerLinkActive="active" >Add Medicine</a>
+          </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/medicine/list" routerLinkActive="active" >View Medicine</a>
+      </li>  
+	  <li class="nav-item">
+            <a class="nav-link" routerLink="/package/add" routerLinkActive="active" >Add Package</a>
+          </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/package/list" routerLinkActive="active" >View Package</a>
+      </li>  
+	   <li class="nav-item">
+        <a class="nav-link bellicon" routerLink="/notification" routerLinkActive="active" >View Notifications<span>{{list.length}}</span></a>
+      </li>   <li class="nav-item">
+        <a class="nav-link" routerLink="/medicinereport" routerLinkActive="active" >Medicine Report</a>
+      </li> <li class="nav-item">
+        <a class="nav-link" routerLink="/package/report" routerLinkActive="active" >Package Report</a>
+      </li> 
+    </ul>
+	  <ul *ngIf="Wrolevalue" class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/wholesalerdashboard1" routerLinkActive="active">DashBoard</a>
+          </li>   
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/sendwholesaler" routerLinkActive="active" >View Medicine</a>
+          </li> <li class="nav-item">
+            <a class="nav-link" routerLink="/recievepackagewholesaler" routerLinkActive="active" >View Package</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" routerLink="/sendwholesalerreport" routerLinkActive="active" >Medicine Report</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" routerLink="/recievepackagewholesalerreport" routerLinkActive="active" >Package Report</a>
+          </li>
+		  <li class="nav-item">
+        <a class="nav-link bellicon" routerLink="/notification" routerLinkActive="active" >View Notifications<span>{{list.length}}</span></a>
+      </li>
+    </ul>
+	  <ul *ngIf="Drolevalue" class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/distributordashboard1" routerLinkActive="active" >DashBoard</a>
+            
+          </li> 
+          
+          <li>
+            <a class="nav-link" routerLink="/senddistributor" routerLinkActive="active" >View Medicine</a>
+          </li>
+		   <li>
+            <a class="nav-link" routerLink="/recievepackage" routerLinkActive="active" >View Package</a>
+          </li>
+		    <li>
+            <a class="nav-link" routerLink="/senddistributorreport" routerLinkActive="active" >Medicine Report</a>
+          </li>
+		  <li>
+            <a class="nav-link" routerLink="/recievepackagereport" routerLinkActive="active" >Package Report</a>
+          </li>
+		  <li class="nav-item">
+        <a class="nav-link bellicon" routerLink="/notification" routerLinkActive="active" >View Notifications<span>{{list.length}}</span></a>
+      </li>
+    </ul>
+	  <ul *ngIf="Prolevalue" class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/sendpharma" routerLinkActive="active">Pharma</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" routerLink="/recievepackagepharma" routerLinkActive="active" >View Package</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" routerLink="/sendpharmareport" routerLinkActive="active" >Medicine Report</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" routerLink="/recievepackagepharmareport" routerLinkActive="active" >Packages Report</a>
+          </li>
+<li class="nav-item">
+        <a class="nav-link bellicon" routerLink="/notification" routerLinkActive="active" >View Notifications<span>{{list.length}}</span></a>
+      </li>		  
+    </ul>
+	 <ul *ngIf="Trolevalue" class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/transporter" routerLinkActive="active" >Transporter</a>
+          </li> <li class="nav-item">
+            <a class="nav-link" routerLink="/packagetransporter" routerLinkActive="active" >Package Transporter</a>
+          </li>   
+<li class="nav-item">
+        <a class="nav-link bellicon" routerLink="/notification" routerLinkActive="active" >View Notifications<span>5</span></a>
+      </li>		  
+    </ul>
+	
+    <form class="form-inline my-2 my-lg-0">
+      <a [routerLink]="'/profile'">Profile</a>&nbsp; &nbsp; &nbsp;
+      <button (click)="logout()" class="btn btn-outline-primary my-2 my-sm-0"*ngIf="flayg" type="submit">Logout</button>
+    </form>
+  </div>
+  
+  
+</nav>
+
+
+<!-- private key Modal -->
+
+<div *ngIf="popuptask" _ngcontent-c1 aria-labelledby="exampleModalLabel" class="modal fade {{button1}}" id="basicExampleModal" role="dialog" tabindex="-1" style="display: block; background-color: rgba(17, 16, 16, 0.82);" aria-modal="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="    border-bottom: 1px solid #ffffff;">
+        <h5 class="modal-title" id="exampleModalLabel">Private Key</h5>
+      </div>
+      <div class="modal-body">
+        <h6 style="color:red; float: right;">Chance {{ 3 - count}}</h6>
+        <span style="color:green; text-align: right;">You have only 3 chance to enter your valid Key</span>
+       <input type="text" #privateK class="form-control required" placeholder="Enter your private Key">
+      </div>
+      <div class="modal-footer" style="border-top: 1px solid #ffffff;">       
+        <button type="button" class="btn btn-primary" (click)="postPrivateKey(privateK.value)">Save</button>
+      </div>
+    </div>
+  </div>
+</div> 
